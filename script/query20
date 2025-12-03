@@ -1,0 +1,14 @@
+-- ===================================================
+-- 20. Find the Total Number of Assessments Per Course
+-- ===================================================
+
+Select
+	co.course_id,
+	co.course_name,
+    Count(a.assessment_id) As total_assessment_per_course
+From assessments As a
+Inner Join modules As mo
+On a.module_id = mo.module_id
+Inner Join courses As co
+On mo.course_id = co.course_id
+Group By co.course_id;
