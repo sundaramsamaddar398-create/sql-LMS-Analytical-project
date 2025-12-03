@@ -1,0 +1,10 @@
+-- ======================================================================
+-- 6. Find the Average Score for a Specifc Assessment (assessment_id = 3)
+-- ======================================================================
+
+Select 
+	assessment_id,
+    Avg(score) As average_score
+From assessment_submission
+Where assessment_id = 1
+Group by assessment_id;
