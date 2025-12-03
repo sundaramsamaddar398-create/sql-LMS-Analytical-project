@@ -1,0 +1,14 @@
+-- ===========================================================
+-- 7. List All Enrollments with Student Names and Course Names
+-- ===========================================================
+
+Select
+	Concat(us.first_name, " ", last_name) As full_name,
+    co.course_name,
+    en.enrolled_at As enrollment_date
+From enrollments As en
+Inner Join user As us
+On us.user_id = en.user_id
+Inner Join courses As co
+On co.course_id = en.course_id
+Where us.role = 'student';
