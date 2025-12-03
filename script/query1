@@ -1,0 +1,12 @@
+-- =============================================
+-- 1. List All Courses with Their Category Names
+-- =============================================
+
+Select 
+	co.course_id,
+	co.course_name,
+	ca.category_id,
+	ca.category_name
+From courses As co
+Inner Join categories As ca
+Where co.category_id = ca.category_id;
