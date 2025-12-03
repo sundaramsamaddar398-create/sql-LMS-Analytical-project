@@ -1,0 +1,15 @@
+-- ==============================================================
+-- 5. List All Content Items for a Specifc Module (module_id = 4)
+-- ==============================================================
+
+Select 
+	con.module_id,
+    mo.module_name,
+	con.content_id, 
+    con.title,
+    con.content_type,
+    con.url
+From modules As mo
+Inner Join content As con
+On mo.module_id = con.module_id
+Where con.module_id = 4; 
