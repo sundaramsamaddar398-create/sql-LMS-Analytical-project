@@ -1,0 +1,20 @@
+-- ==============================================================
+-- 13. List the Content for Courses in the 'Programming' Category
+-- ==============================================================
+
+Select
+	con.content_id,
+    con.title,
+    con.content_type,
+    con.url,
+    mo.module_name,
+    co.course_name,
+    ca.category_name
+From categories As ca
+Inner Join courses As co
+On co.category_id = ca.category_id
+Inner Join modules As mo
+On mo.course_id = co.course_id
+Inner Join content As con
+On con.module_id = mo.module_id
+Where ca.category_name = 'Programming';
