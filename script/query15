@@ -1,0 +1,11 @@
+-- =====================================================
+-- 15. List Courses with the Total Number of Enrollments
+-- =====================================================
+
+Select 
+	co.course_name,
+    Count(en.enrollment_id) As no_of_enrollment
+From courses As co
+Inner Join enrollments As en
+On en.course_id = co.course_id
+Group By co.course_name;
