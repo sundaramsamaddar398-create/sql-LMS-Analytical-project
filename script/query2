@@ -1,0 +1,12 @@
+-- ===============================================
+-- 2. Count the Number of Courses in Each Category
+-- ===============================================
+
+Select 
+	ca.category_id,
+    ca.category_name,
+    Count(co.course_id) As no_of_courses
+From courses As co
+Inner Join categories As ca
+Where co.category_id = ca.category_id
+Group By ca.category_id ;
