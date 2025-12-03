@@ -1,0 +1,11 @@
+-- ====================================================
+-- 14. Retrieve Modules That Have No Associated Content
+-- ====================================================
+
+Select
+co.module_id,
+mo.module_name
+From content As co
+Right Join modules As mo
+On co.module_id = mo.module_id
+Where co.module_id IS Null;
