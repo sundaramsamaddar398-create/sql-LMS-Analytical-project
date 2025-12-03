@@ -1,0 +1,14 @@
+-- ===============================================
+-- 17. List Users with Their Number of Enrollments
+-- ===============================================
+
+Select
+	us.user_id,
+    Concat(us.first_name, " ", last_name) As full_name,
+    Count(co.course_id) As total_courses
+From enrollments As en
+Inner Join user As us
+On us.user_id = en.user_id
+Inner Join courses As co
+On co.course_id = en.course_id
+Group By us.user_id;
