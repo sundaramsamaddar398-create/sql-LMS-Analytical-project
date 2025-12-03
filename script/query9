@@ -1,0 +1,12 @@
+-- ============================================================
+-- 9. Count the Number of Assessment Submissions per Assessment
+-- ============================================================
+
+Select 
+	a.assessment_id,
+    a.assessment_name,
+    count(a_su.submission_id) As total_assessment_submission
+From assessment_submission As a_su
+Inner Join assessments As a
+On a.assessment_id = a_su.assessment_id
+Group by assessment_id;
