@@ -1,0 +1,14 @@
+-- ===================================================================================
+-- 4. Retrieve All Modules for a Specifc Course (course_id = 2) Sorted by Module Order
+-- ===================================================================================
+
+Select 
+	co.course_name,
+    mo.module_id,
+	mo.module_name,
+	mo.module_order
+From modules As mo
+Inner Join courses As co
+On co.course_id = mo.course_id
+Where mo.course_id = 2 
+Order by mo.module_order;
