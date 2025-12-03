@@ -1,0 +1,35 @@
+-- ==================================================================
+-- 24. Find the Percentage of Passing Submissions for Each Assessment
+-- ==================================================================
+
+With cte_passing_submissions As
+(
+	Select
+		submission_id,
+        assessment_id,
+        score,
+        Case
+			When score >= 60 Then "Pass"
+            When score <60 Then "Fail"
+            Else "Invalid Report"
+		End As report_pass_or_fail
+	From assessment_submission
+),
+cte_cal_pass_percentage As
+(
+	Select
+		assessment_id,
+        (Count(report_pass_or_fail)/Count(assessment_id))*100 As percentage_passing
+	From cte_passing_submissions
+    Group By assessment_id
+)
+Select
+	a.assessment_id,
+    a.assessment_name,
+    ccpp.percentage_passing
+From assessment_submission As a_su
+Inner Join assessments As a
+On a_su.assessment_id = a.assessment_id
+Inner Join cte_cal_pass_percentage As ccpp
+On ccpp.assessment_id = a.assessment_id
+Group By a.assessment_id;
