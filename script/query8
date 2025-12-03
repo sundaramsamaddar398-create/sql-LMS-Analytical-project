@@ -1,0 +1,9 @@
+-- =======================================================
+-- 8. List All Instructors’ Full Names and Email Addresses
+-- =======================================================
+
+Select 
+	Concat(first_name, " ", last_name) As full_name,
+    email
+From user
+Where role = "Instructor";
