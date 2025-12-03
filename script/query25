@@ -1,0 +1,10 @@
+-- =================================================
+-- 25. Find Courses That Do Not Have Any Enrollments
+-- =================================================
+
+Select
+	*
+From courses As co
+Left Join enrollments As en
+On co.course_id = en.course_id
+Where en.course_id Is Null;
