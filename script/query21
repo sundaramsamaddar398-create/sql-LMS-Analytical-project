@@ -3,6 +3,6 @@
 -- ======================================
 
 Select 
-*
+  *
 From enrollments
 Where enrolled_at Between '2023-05-01' And '2023-05-31';
