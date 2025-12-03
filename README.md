@@ -1,6 +1,8 @@
 # sql-LMS-Analytical-project
 Developed an analytical SQL project for a Learning Management System (LMS), exploring tables like users, courses, modules, enrollments, and assessments to generate insights on learner engagement, course popularity, and performance trends, showcasing strong query design and business relevance.
+
 📘 LMS Analytical SQL Project
+
 🔎 Project Overview
 This project focuses on building an analytical SQL framework for a Learning Management System (LMS). The goal was to design queries and insights that help track learner engagement, course performance, and assessment outcomes. By leveraging relational tables such as user, courses, modules, content, categories, enrollments, assessments, and assessment_submission, the project demonstrates how raw LMS data can be transformed into actionable intelligence.
 
