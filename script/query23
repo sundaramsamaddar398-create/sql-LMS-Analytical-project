@@ -1,0 +1,8 @@
+-- ===================================
+-- 23. List All Users with Their Roles
+-- ===================================
+
+Select 
+	Concat(first_name, " ", last_name) As full_name,
+    role
+From user;
