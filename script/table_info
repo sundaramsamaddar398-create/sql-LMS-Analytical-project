@@ -1,0 +1,19 @@
+/* =========================================================================================================================================================================
+Database Context: 
+- Uses the lms schema to access Learning Management System data.
+- Comprehensive Extraction: Selects all records from core tables (assessment_submission, assessments, categories, courses, content, enrollments, modules, user).
+- Schema Validation: Provides a full snapshot of raw data to understand table structures and relationships.
+- Foundation for Analysis: Serves as the starting point for building analytical queries, KPIs, and dashboards.
+- Business Insight Potential: Enables exploration of learner engagement, course popularity, assessment performance, and enrollment trends.
+========================================================================================================================================================================= */
+
+Use lms;
+
+Select * From assessment_submission;
+Select * From assessments;
+Select * From categories;
+Select * From courses;
+Select * From content;
+Select * From enrollments;
+Select * From modules;
+Select * From user;
