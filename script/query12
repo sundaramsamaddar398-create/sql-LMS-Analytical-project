@@ -1,0 +1,13 @@
+-- ========================================================
+-- 12. Find Students Who Have Not Submitted Any Assessments
+-- ========================================================
+
+Select 
+	us.user_id,
+    Concat(us.first_name, ' ', us.last_name) As student_name,
+    us.email
+From user As us
+Left Join assessment_submission As a_su
+On us.user_id = a_su.user_id
+Where a_su.user_id Is Null
+And role = 'student';
