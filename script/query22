@@ -1,0 +1,21 @@
+-- ====================================================================================
+-- 22. Retrieve Assessment Submission Details Along with Course and Student Information
+-- ====================================================================================
+
+Select
+	a_su.submission_id,
+    Concat(us.first_name, " ", us.last_name) As student_name,
+    a.assessment_name,
+    a_su.submission_data,
+    a_su.submitted_at,
+    a_su.score
+From assessment_submission As a_su
+Inner Join user As us
+On us.user_id = a_su.user_id
+Inner Join assessments As a
+On a_su.assessment_id = a.assessment_id
+Inner Join modules As mo
+On a.module_id = mo.module_id
+Inner Join courses As co
+On mo.course_id = co.course_id
+Where us.role = 'Student';
